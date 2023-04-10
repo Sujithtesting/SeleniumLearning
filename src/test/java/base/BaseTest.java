@@ -28,7 +28,6 @@ import extentListeners.ExtentListeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ExcelReader;
 
-
 public class BaseTest {
 
 	/*
@@ -70,6 +69,35 @@ public class BaseTest {
 
 		}
 
+	}
+
+	public static String getElementText(String locatorKey) {
+
+		if (locatorKey.endsWith("_XPATH")) {
+			return driver.findElement(By.xpath(or.getProperty(locatorKey))).getText();
+		} else if (locatorKey.endsWith("_CSS")) {
+			return driver.findElement(By.cssSelector(or.getProperty(locatorKey))).getText();
+		} else if (locatorKey.endsWith("_ID")) {
+			return driver.findElement(By.id(or.getProperty(locatorKey))).getText();
+		}
+
+		return null; // Return null if element is not present or locatorKey is invalid
+	}
+
+	public static boolean validateElementText(String locatorKey, String expectedText) {
+		String actualText = getElementText(locatorKey);
+		if (actualText != null && actualText.equals(expectedText)) {
+			log.info("Validation Passed. Actual Text: " + actualText + " Matches Expected Text: " + expectedText);
+			extentListeners.ExtentListeners.test.log(Status.PASS,
+					"Validation Passed. Actual Text: " + actualText + " Matches Expected Text: " + expectedText);
+			return true;
+		} else {
+			log.info(
+					"Validation Failed. Actual Text: " + actualText + " Does Not Match Expected Text: " + expectedText);
+			extentListeners.ExtentListeners.test.log(Status.FAIL,
+					"Validation Failed. Actual Text: " + actualText + " Does Not Match Expected Text: " + expectedText);
+			return false;
+		}
 	}
 
 	public static boolean isElementPresent(String locatorKey) {

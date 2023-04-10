@@ -54,7 +54,7 @@ public class ExtentListeners implements ITestListener, ISuiteListener {
 	public void onTestFailure(ITestResult result) {
 		
 
-		///test.fail(result.getThrowable().getMessage());
+		//test.fail(result.getThrowable().getMessage());
 		try {
 			ExtentManager.captureScreenshot();
 		} catch (IOException e) {

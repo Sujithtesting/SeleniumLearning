@@ -10,7 +10,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="elements"/>
+          <include name="testbox" invocation-numbers="0"/>
         </methods>
       </class> <!-- testCases.Elements -->
     </classes>
