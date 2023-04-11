@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-11T19:53:21 IST" name="Suite" finished-at="2023-04-11T19:53:24 IST" duration-ms="2698">
+    <groups>
+    </groups>
+    <test started-at="2023-04-11T19:53:21 IST" name="Selenium Practise" finished-at="2023-04-11T19:53:24 IST" duration-ms="2698">
+      <class name="testCases.Elements">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.Elements@4455f57d]" started-at="2023-04-11T19:52:56 IST" name="setUp" finished-at="2023-04-11T19:53:21 IST" duration-ms="24794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testbox(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.Elements@4455f57d]" started-at="2023-04-11T19:53:21 IST" name="testbox" data-provider="dp1" finished-at="2023-04-11T19:53:23 IST" duration-ms="1984" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Karun]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[singh@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[address]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[peraddress]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Name:Karun]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Email:singh@gmail.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Current Address :address]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Permananet Address :peraddress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testbox -->
+        <test-method signature="checkbox()[pri:1, instance:testCases.Elements@4455f57d]" started-at="2023-04-11T19:53:23 IST" name="checkbox" finished-at="2023-04-11T19:53:24 IST" duration-ms="647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkbox -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.Elements@4455f57d]" started-at="2023-04-11T19:53:24 IST" name="tearDown" finished-at="2023-04-11T19:53:25 IST" duration-ms="560" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.Elements -->
+    </test> <!-- Selenium Practise -->
+  </suite> <!-- Suite -->
+</testng-results>

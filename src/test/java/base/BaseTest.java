@@ -3,11 +3,8 @@ package base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.logging.LogManager;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
@@ -15,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -46,6 +44,7 @@ public class BaseTest {
 	public static WebDriverWait wait;
 	public static WebElement dropdown;
 	public static ChromeOptions options = new ChromeOptions();
+	public static String browser;
 
 	/* Reusable Keywords */
 	public static void click(String locatorKey) {
@@ -208,6 +207,13 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 
+		if (System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
+			browser = System.getenv("browser");
+		} else {
+			browser = config.getProperty("browser");
+		}
+		config.setProperty("browser", browser);
+
 		if (config.getProperty("browser").equals("chrome")) {
 
 			WebDriverManager.chromedriver().setup();
@@ -221,6 +227,12 @@ public class BaseTest {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			log.info("Launching Firefox !!!");
+
+		} else if (config.getProperty("browser").equals("edge")) {
+
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			log.info("Launching edge !!!");
 
 		}
 
